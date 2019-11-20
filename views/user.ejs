@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>User</title>
   </head>
   <body>
-    Podcast
+    <form action="/home/record" method="POST">
+        Select a file: <input type="file" name="myFile" accept="audio/*"><br><br>
+        <input type="submit">
+      </form>
   </body>
 </html>
