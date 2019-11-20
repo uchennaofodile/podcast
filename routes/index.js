@@ -9,19 +9,19 @@ const authenticate = require("../config/middleware/isauthenticated");
 // ROUTES
 // GET home
 routes.get("/home", authenticate, function(req, res) {
-  db.Tasks.findAll({
+  db.Users.findAll({
     where: { userID: req.user.id }
   }).then(function(results) {
     //console.log(results);
-    res.render("home.ejs", { list: results, user: req.user });
+    res.render("home.ejs", { /*list: results*/ user: req.user });
   });
 });
 
 // POST ninja
 routes.post("/ninja", function(req, res) {
   console.log(req.body.taskItem);
-  db.Tasks.create({
-    todo: req.body.taskItem,
+  db.Users.create({
+    //todo: req.body.taskItem,
     userID: req.user.id
   }).then(function(results) {
     console.log(results);
