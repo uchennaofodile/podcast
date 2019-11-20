@@ -2,24 +2,40 @@ const express = require("express");
 const db = require("../models");
 const routes = express.Router();
 const passport = require("../config/passport");
+const authenticate = require("../config/middleware/isauthenticated");
 
-//ROUTES
+//defines how routes behave
 
-//GET home
-routes.get("/home", function(req, res) {
-  res.render("home.ejs");
+// ROUTES
+// GET home
+routes.get("/home", authenticate, function(req, res) {
+  db.Tasks.findAll({
+    where: { userID: req.user.id }
+  }).then(function(results) {
+    //console.log(results);
+    res.render("home.ejs", { list: results, user: req.user });
+  });
 });
 
-//GET user
-routes.get("/home/user", function(req, res) {
-  res.render("user.ejs");
+// POST ninja
+routes.post("/ninja", function(req, res) {
+  console.log(req.body.taskItem);
+  db.Tasks.create({
+    todo: req.body.taskItem,
+    userID: req.user.id
+  }).then(function(results) {
+    console.log(results);
+    res.redirect("/home");
+  });
 });
 
+// ROUTES: users
 
-//POST user
-routes.post('/home/record'), function(req,res){
-  res.
-}
+// GET login
+
+routes.get("/user/login", function(req, res) {
+  res.render("login");
+});
 
 // POST login
 routes.post(
@@ -53,5 +69,15 @@ routes.delete("/delete/:index", function(req, res) {
   res.json(list);
 });
 
+//GET profile
+routes.get("/profile", authenticate, function(req, res) {
+  res.render("profile", { user: req.user });
+});
+
+//GET logout
+routes.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/home");
+});
 
 module.exports = routes;
