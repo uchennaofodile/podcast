@@ -5,7 +5,7 @@ const bycrpt = require("bcryptjs");
 
 //exporting this model to our index
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("Recordings", {
+  var Recordings = sequelize.define("Recordings", {
     //define columns of our table
     userID: {
       type: DataTypes.INTEGER,
@@ -38,23 +38,5 @@ module.exports = function(sequelize, DataTypes) {
     }
   });
 
-  // create custom methods for our user model
-
-  User.prototype.verifyPassword = function(password) {
-    return bycrpt.compareSync(password, this.password);
-  };
-
-  // hooks happen on specific scenarios
-
-  // encrypting user passwords
-
-  User.addHook("beforeCreate", function(user) {
-    user.password = bycrpt.hashSync(
-      user.password,
-      bycrpt.genSaltSync(10),
-      null
-    );
-  });
-
-  return User;
+  return Recordings;
 };
