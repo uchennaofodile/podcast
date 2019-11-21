@@ -10,7 +10,7 @@ const bodyparser = require("body-parser");
 // ROUTES
 
 //GET landing page
-routes.get("/landing", function(req, res) {
+routes.get("/", function(req, res) {
   res.render("landing.ejs");
 });
 
