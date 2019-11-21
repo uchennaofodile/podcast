@@ -29,6 +29,17 @@ routes.get("/createrec", function(req, res) {
   res.render("createrec.ejs");
 });
 
+routes.post("/createrec", function(req, res) {
+  db.Recordings.create({
+    userID: req.user.id,
+    title: req.body.title,
+    recording: req.body.recording,
+    description: req.body.description
+  });
+
+  res.render("createrec.ejs");
+});
+
 // POST
 routes.post("/home", function(req, res) {
   console.log(req.body.bio);
