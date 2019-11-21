@@ -35,6 +35,10 @@ module.exports = function(sequelize, DataTypes) {
     image: {
       type: DataTypes.CHAR,
       allowNull: true
+    },
+    userID: {
+      type: DataTypes.CHAR,
+      allowNull: false
     }
   });
 

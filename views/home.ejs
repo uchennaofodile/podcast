@@ -28,18 +28,27 @@
             Welcome <%= user.nickname %> <span class="member-name"></span>
           </h2>
         </div>
-        <form>
-            <a href="/home">Login</a><a href='/registration'>Sign Up</a> <img src="../public/placeholder" alt="placeholder" />
+        <a href="/home">Login</a><a href="/user/signup">Sign Up</a>
+        <img src="../public/placeholder.png" alt="placeholder" />
+        <form method="POST" action="/home">
           <h3>Bio:</h3>
-          <textarea cols="50" rows="5">
-         
-          </textarea>
-          <input style= 'display: block' type="submit" name="Submit" placeholder="Submit">
-          <h3>Upload Profile Image:</h3>
-          <form action="/action_page.php" method="POST">
-            <input type="file" name="pic" accept="image/*" />
-            <input type="submit" />
-          <a href="/createrec"><h3>Upload Audio</h3></a>
+          <textarea cols="50" rows="5" name="bio"> </textarea>
+          <input
+            style="display: block"
+            type="submit"
+            name="Submit"
+            placeholder="Submit"
+          />
+        </form>
+
+        <h3>Upload Profile Image:</h3>
+
+        <form action="/action_page.php" method="POST">
+          <input type="file" name="pic" accept="image/*" />
+          <input type="submit" />
+        </form>
+
+        <a href="/createrec"><h3>Upload Audio</h3></a>
         <p>
           <strong>Note:</strong> Because of security issues, this example will
           not allow you to upload files.

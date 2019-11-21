@@ -3,17 +3,18 @@ const db = require("../models");
 const routes = express.Router();
 const passport = require("../config/passport");
 const authenticate = require("../config/middleware/isauthenticated");
+const bodyparser = require("body-parser");
 
 //defines how routes behave
 
 // ROUTES
 
-//GET home page
+//GET landing page
 routes.get("/landing", function(req, res) {
   res.render("landing.ejs");
 });
 
-// GET user profile login
+// GET user login/profile page
 routes.get("/home", authenticate, function(req, res) {
   db.Users.findAll({
     where: { id: req.user.id }
@@ -23,21 +24,21 @@ routes.get("/home", authenticate, function(req, res) {
   });
 });
 
-//Get registration
-routes.get("/registration", function(req, res) {
-  res.render("registration.ejs");
-});
-
 //GET create recoding
 routes.get("/createrec", function(req, res) {
   res.render("createrec.ejs");
 });
 
 // POST
-routes.post("/profile_update", function(req, res) {
+routes.post("/home", function(req, res) {
+  console.log(req.body.bio);
   db.Users.create({
-    userID: req.user.image
-  }).then(function(results) {});
+    bio: req.body.bio,
+    userID: req.user.id
+  }).then(function(results) {
+    console.log(results);
+    res.redirect("/home");
+  });
 });
 
 // ROUTES: users
