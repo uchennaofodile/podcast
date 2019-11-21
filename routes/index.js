@@ -17,16 +17,11 @@ routes.get("/home", authenticate, function(req, res) {
   });
 });
 
-// POST ninja
-routes.post("/ninja", function(req, res) {
-  console.log(req.body.taskItem);
+// POST
+routes.post("/profile_update", function(req, res) {
   db.Users.create({
-    //todo: req.body.taskItem,
-    userID: req.user.id
-  }).then(function(results) {
-    console.log(results);
-    res.redirect("/home");
-  });
+    userID: req.user.image
+  }).then(function(results) {});
 });
 
 // ROUTES: users
@@ -59,6 +54,8 @@ routes.post(
     failureRedirect: "/user/signup"
   })
 );
+
+//
 
 //create a server to handle delete request
 routes.delete("/delete/:index", function(req, res) {

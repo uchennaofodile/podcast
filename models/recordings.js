@@ -5,34 +5,36 @@ const bycrpt = require("bcryptjs");
 
 //exporting this model to our index
 module.exports = function(sequelize, DataTypes) {
-  var User = sequelize.define("Users", {
+  var User = sequelize.define("Recordings", {
     //define columns of our table
-    email: {
-      type: DataTypes.STRING,
+    userID: {
+      type: DataTypes.INTEGER,
       allowNull: false, //user must have email
-      unique: true, //email must be unique
-      validate: {
-        isEmail: true //email must be valid
-      }
+      unique: true //email must be unique
     },
-    password: {
-      type: DataTypes.STRING,
+    recording: {
+      type: DataTypes.CHAR,
       allowNull: false
     },
 
-    nickname: {
+    title: {
+      type: DataTypes.CHAR,
+      allowNull: false
+    },
+    language: {
       type: DataTypes.STRING,
       allowNull: false
     },
-    bio: {
-      type: DataTypes.CHAR
-    },
-    rating: {
-      type: DataTypes.INTEGER,
+    genre: {
+      type: DataTypes.STRING,
       allowNull: false
     },
-    image: {
+    description: {
       type: DataTypes.CHAR
+    },
+    image: {
+      type: DataTypes.CHAR,
+      allowNull: false
     }
   });
 

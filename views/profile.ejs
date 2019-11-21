@@ -28,6 +28,22 @@
             Welcome <%= user.nickname %> <span class="member-name"></span>
           </h2>
         </div>
+        <form>
+          <img src="../public/placeholder.png" alt="placeholder" />
+          <h3>Bio:</h3>
+          <textarea cols="50" rows="5">
+          This is where the user can enter text. If there's too much text, the textbox can develop scrollbars to accommodate the extra text...
+          </textarea>
+          <h3>Upload Profile Image:</h3>
+          <form action="/action_page.php" method="POST">
+            <input type="file" name="pic" accept="image/*" />
+            <input type="submit" />
+          <a href="../views/createrecording.ejs"><h3>Upload Audio</h3></a>
+        <p>
+          <strong>Note:</strong> Because of security issues, this example will
+          not allow you to upload files.
+        </p>
+        <br />
       </div>
     </div>
   </body>
