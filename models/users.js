@@ -25,14 +25,16 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     },
     bio: {
-      type: DataTypes.CHAR
+      type: DataTypes.CHAR,
+      allowNull: true
     },
     rating: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     image: {
-      type: DataTypes.CHAR
+      type: DataTypes.CHAR,
+      allowNull: true
     }
   });
 

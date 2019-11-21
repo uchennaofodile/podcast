@@ -38,7 +38,9 @@
           <form action="/action_page.php" method="POST">
             <input type="file" name="pic" accept="image/*" />
             <input type="submit" />
-          <a href="../views/createrecording.ejs"><h3>Upload Audio</h3></a>
+            <form action="/views/createrec.ejs" method="GET">
+          <a href="../views/createrec.ejs"><h3>Upload Audio</h3></a>
+          </form>
         <p>
           <strong>Note:</strong> Because of security issues, this example will
           not allow you to upload files.

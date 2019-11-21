@@ -7,14 +7,30 @@ const authenticate = require("../config/middleware/isauthenticated");
 //defines how routes behave
 
 // ROUTES
-// GET home
+
+//GET home page
+routes.get("/landing", function(req, res) {
+  res.render("landing.ejs");
+});
+
+// GET user profile login
 routes.get("/home", authenticate, function(req, res) {
   db.Users.findAll({
-    where: { userID: req.user.id }
+    where: { id: req.user.id }
   }).then(function(results) {
     //console.log(results);
     res.render("home.ejs", { /*list: results*/ user: req.user });
   });
+});
+
+//Get registration
+routes.get("/registration", function(req, res) {
+  res.render("registration.ejs");
+});
+
+//GET create recoding
+routes.get("/createrec", function(req, res) {
+  res.render("createrec.ejs");
 });
 
 // POST
