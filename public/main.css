@@ -106,7 +106,12 @@ button:hover {
 }
 /* Avatar image */
 img.avatar {
-  width: 40%;
+  width: 20%;
+  border-radius: 50%;
+}
+
+img.avatar-lower {
+  width: 10%;
   border-radius: 50%;
 }
 /* Add padding to containers */
