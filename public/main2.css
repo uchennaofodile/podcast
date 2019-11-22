@@ -23,7 +23,7 @@
 }
 .navbar {
   overflow: hidden;
-  background-color: black;
+  background-color: grey;
   position: sticky;
   position: -webkit-sticky;
   top: 0;
