@@ -1,5 +1,9 @@
 body {
   background-color: #ffb84d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1 {
+  display: inline-block;
 }
 .slider {
   -webkit-appearance: none;
@@ -37,11 +41,11 @@ topnav {
 }
 /* Style the search field */
 form.example input[type="text"] {
-  padding: 10px;
+  padding: 100px;
   font-size: 17px;
-  border: 1px solid grey;
+  border: 10px solid grey;
   float: left;
-  width: 80%;
+  width: 10%;
   background: #f1f1f1;
 }
 /* Style the submit button */
@@ -64,6 +68,10 @@ form.example::after {
   content: "";
   clear: both;
   display: table;
+}
+
+form.fltr {
+  display: inline-block;
 }
 /* Bordered form */
 form {
@@ -132,4 +140,20 @@ span.psw {
   .cancelbtn {
     width: 100%;
   }
+}
+img {
+  width: 15%;
+  border-radius: 80%;
+}
+.fltr {
+  width: 0 auto;
+}
+form.fltr {
+  float: right;
+}
+h1 {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  text-align: center;
 }

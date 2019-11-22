@@ -8,12 +8,15 @@
     <title>Apollo</title>
   </head>
   <body>
-    <form action="/user/signup" method="post">
-      <div class="imgcontainer">
-        <img src="../logo.png" alt="Avatar" class="avatar" />
-      </div>
+    <img class="fltr" src="../logo.png" alt="Avatar" class="avatar-lower" />
+    <h1 class="fltr" style="font-size: 100px;">Apollo</h1>
+    <form class="example, fltr" action="action_page.php">
+      <input type="text" placeholder="Search" name="search" />
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <form class="form" action="/user/signup" method="post">
       <div class="container">
-        <label for="uname"><b>email</b></label>
+        <label for="uname"><b>Email</b></label>
         <input type="text" placeholder="Enter email" name="email" required />
         <label for="psw"><b>Password</b></label>
         <input
@@ -28,19 +31,13 @@
           me or <a href="/user/signup">register</a>
         </label>
       </div>
-      <div class="container" style="background-color:#f1f1f1"></div>
     </form>
-    <h1><img src="../logo.png" alt="Avatar" class="avatar-lower" /></h1>
-    <h2>Apollo Audio Stream</h2>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <!-- The form -->
-    <form class="example" action="action_page.php">
-      <input type="text" placeholder="Search.." name="search" />
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
+
     <html></html>
     <h3>
       Poems
@@ -49,22 +46,21 @@
       <source src="horse.ogg" type="audio/ogg" />
       <source src="horse.mp3" type="audio/mpeg" />
     </audio>
-    <div class="slidecontainer">
-      <input
-        type="range"
-        min="1"
-        max="100"
-        value="50"
-        class="slider"
-        id="myRange"
-      />
-    </div>
     <h3>
       Audio Books
     </h3>
     <audio controls>
       <source src="horse.ogg" type="audio/ogg" />
-      <source src="horse.mp3" type="audio/mpeg" />
+      <source src="Interview 009.mp3" type="audio/mpeg" />
     </audio>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <hr />
+    <footer>
+      Apollo &copy; 2019
+    </footer>
   </body>
 </html>

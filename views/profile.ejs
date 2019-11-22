@@ -7,7 +7,7 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
     />
-    <link href="css/main.css" rel="stylesheet" />
+    <link href="./main2.css" rel="stylesheet" />
   </head>
   ​
   <body>
@@ -23,28 +23,43 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-3">
+        
           <img src="image" alt="" />
           <h2>
             Welcome <%= user.nickname %> <span class="member-name"></span>
           </h2>
         </div>
-        <form>
-          <img src="../public/placeholder.png" alt="placeholder" />
-          <h3>Bio:</h3>
-          <textarea cols="50" rows="5">
-          This is where the user can enter text. If there's too much text, the textbox can develop scrollbars to accommodate the extra text...
-          </textarea>
-          <h3>Upload Profile Image:</h3>
-          <form action="/action_page.php" method="POST">
-            <input type="file" name="pic" accept="image/*" />
-            <input type="submit" />
-            <form action="/views/createrec.ejs" method="GET">
-          <a href="../views/createrec.ejs"><h3>Upload Audio</h3></a>
-          </form>
-        <p>
-          <strong>Note:</strong> Because of security issues, this example will
-          not allow you to upload files.
-        </p>
+        <br><br><br><br><br><br>
+        <img src="./person.png" alt="placeholder" width="20%"/>
+
+        <h3>Upload Profile Image:</h3>
+
+        <form action="/action_page.php" method="POST">
+          <input type="file" name="pic" accept="image/*" />
+          <input type="submit" />
+        </form>
+          <div class="header">
+              <h1>Apollo</h1>
+            </div>
+
+    <hr>
+            <div class="navbar">
+              <a href="/" class="active">Home</a>
+              <a href="/createrec">Create Recording</a>
+        
+            </div>
+            <div class="row">
+              <div class="side">
+                <h2>About Me</h2>
+              <div class="main">
+                <h2>Recent Uploads</h2>
+                <br>
+                <h2>All Uploads</h2>
+            </div>
+            <div class="footer">
+              <h5>"Free your voice and the rest will follow"</h5>
+            </div>
+            
         <br />
       </div>
     </div>
