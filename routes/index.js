@@ -40,6 +40,10 @@ routes.post("/createrec", function(req, res) {
   res.render("createrec.ejs");
 });
 
+routes.get('/FAQ', function(req,res){
+  res.render("FAQ.ejs");
+})
+
 // POST
 routes.post("/home", function(req, res) {
   console.log(req.body.bio);
